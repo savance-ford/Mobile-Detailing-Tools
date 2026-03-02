@@ -1,4 +1,6 @@
 import "./globals.css";
+import { GoogleTagManager } from "@next/third-parties/google";
+
 
 import Providers from "./providers";
 import SiteShell from "@/components/SiteShell";
@@ -33,6 +35,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body>
+        {/* Google Tag Manager */}
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        )}
         {/* Global structured data (site-wide) */}
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
@@ -41,6 +47,9 @@ export default function RootLayout({ children }) {
           <SiteShell>{children}</SiteShell>
         </Providers>
       </body>
+
+ 
+
     </html>
   );
 }
