@@ -1,0 +1,39 @@
+{
+  "name": "Guide",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Short preview text"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full guide content in markdown"
+    },
+    "category_slug": {
+      "type": "string"
+    },
+    "related_tool_slugs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "sort_order": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "title",
+    "slug"
+  ]
+}
